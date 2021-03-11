@@ -1,7 +1,14 @@
 import React from 'react';
+import Recommended from './Recommended';
+import Search from './Search';
 
-function Home(props) {
-	return <div>butts</div>;
+function Home({ strainData }) {
+	return (
+		<div>
+			<Search />
+			<Recommended strainData={strainData} />
+		</div>
+	);
 }
 
 export default Home;

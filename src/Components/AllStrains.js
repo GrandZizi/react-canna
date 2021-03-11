@@ -1,11 +1,11 @@
 import React from 'react';
 
-function Search(props) {
+function AllStrains() {
     return (
         <div>
-            Search
+            strain
         </div>
     );
 }
 
-export default Search;
+export default AllStrains;

@@ -1,0 +1,10 @@
+.navbar{
+    background-color:green;
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr;
+}
+
+.navbar-option{
+    text-decoration: none;
+    border: 1px solid black;
+}
