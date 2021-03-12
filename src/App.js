@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom';
 import Home from './Components/Home';
 import AllStrains from './Components/AllStrains';
 import StrainFinder from './Components/StrainFinder';
+import Strain from "./Components/Strain";
 
 function App(props) {
 	const [strainData, setStrainData] = useState([]);
@@ -23,8 +24,11 @@ function App(props) {
 				<Route path='/' exact>
 					<Home strainData={strainData} />
 				</Route>
-				<Route path='/AllStrains' component={AllStrains} />
+				<Route path='/AllStrains' exact>
+					<AllStrains strainData={strainData}/>
+				</Route>
 				<Route path='/StrainFinder' component={StrainFinder} />
+				<Route path='/AllStrains/:strainNAME' component={Strain}/>
 			</main>
 		</div>
 	);
