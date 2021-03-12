@@ -5,7 +5,10 @@ function StrainFinder(props) {
 	const [positive, setPositive] = useState([]);
 	const [negative, setNegative] = useState([]);
 	const [medical, setMedical] = useState([]);
-	const [flavors,setFlavors] = useState([])
+	const [flavors,setFlavors] = useState([]);
+	const [type, setType] = useState('race')
+	const [input, setInput] = useState()
+	const [search, setSearch] = useState('')
 	const key = process.env.REACT_APP_API_KEY;
 	const baseUrl = `https://strainapi.evanbusse.com/${key}/strains/search/`;
 
@@ -29,6 +32,19 @@ function StrainFinder(props) {
 			.then((resJson) => setFlavors(resJson));
 	}
 
+	function handleTypeChange(e) {
+		setType(e.target.value)
+	}
+
+	function handleInputChange(e) {
+		setInput(e.target.value)
+	}
+
+	function handleSubmit(e){
+		e.preventDefault()
+		setSearch(`${baseUrl}${type}/${input}`);
+	}
+
 
 	useEffect(() => {
 		settingValues()
@@ -36,9 +52,8 @@ function StrainFinder(props) {
 
 	return (
 		<div>
-			<Link to='/StrainFinder'>
-			<form>
-				<select>
+			<form >
+				<select value={type} onChange={handleTypeChange}>
 					<option value='race'>Race</option>
 					<option value='effect'>Effect</option>
 					<option selected value='flavor'>
@@ -46,11 +61,9 @@ function StrainFinder(props) {
 					</option>
 					<option value='name'>Name</option>
 				</select>
-				<input type='text' placeholder='Enter a defining value' />
-				<input type='submit' />
+				<input type='text' placeholder='Enter a defining value' onChange={handleInputChange}/>
+				<input type='submit' onClick={handleSubmit}/>
 			</form>
-			</Link>
-			<Route></Route>
 			<Route path='/StrainFinder' exact>
 			<h2>Effect Types</h2>
 			<div>
