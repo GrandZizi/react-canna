@@ -27,7 +27,7 @@ function App(props) {
 				<Route path='/AllStrains' exact>
 					<AllStrains strainData={strainData}/>
 				</Route>
-				<Route path='/StrainFinder' component={StrainFinder} />
+				<Route path='/StrainFinder' exact component={StrainFinder} />
 				<Route path='/AllStrains/:strainNAME' component={Strain}/>
 			</main>
 		</div>

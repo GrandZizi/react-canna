@@ -6,8 +6,6 @@ function Recommended({ strainData }) {
 	function randomStrains() {
 		let randomizedStrains = [];
 		const strainDataKeys = Object.keys(strainData);
-		console.log(strainDataKeys);
-		console.log(strainData);
 
 		const temp = [
 			'Dog Shit',
@@ -22,6 +20,18 @@ function Recommended({ strainData }) {
 			'NYC Diesel',
 			'Gorilla Cookies',
 			'Earthquake',
+			'Super Bud',
+			'Skunk Haze',
+			'Tangerine Haze',
+			'Bhang Lemon Haze',
+			'Whitewalker OG',
+			'Black Magic',
+			'Blackberry Rhino',
+			'Super Green Crack',
+			'Jacked-Up',
+			'Ancient OG',
+			'Serious 6',
+			'Lime Green Skunk',
 		];
 
 		if (selectedStrains) {
@@ -32,7 +42,7 @@ function Recommended({ strainData }) {
 		}
 		else{
 			for (let i = 0; i < 6; i++) {
-				let randomIndex = Math.floor(Math.random() * 12);
+				let randomIndex = Math.floor(Math.random() * temp.length);
 				randomizedStrains.push(temp[randomIndex]);
 			}
 		}

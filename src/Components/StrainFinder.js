@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { Link, Route } from 'react-router-dom';
+import StrainFinderResults from './StrainFinderResults';
+import {Route} from 'react-router-dom'
+import Strain from './Strain'
 
 function StrainFinder(props) {
+	const [searching, setSearching] = useState(false)
 	const [positive, setPositive] = useState([]);
 	const [negative, setNegative] = useState([]);
 	const [medical, setMedical] = useState([]);
 	const [flavors,setFlavors] = useState([]);
 	const [type, setType] = useState('race')
 	const [input, setInput] = useState()
-	const [search, setSearch] = useState('')
+	const [searchUrl, setSearchUrl] = useState('')
 	const key = process.env.REACT_APP_API_KEY;
 	const baseUrl = `https://strainapi.evanbusse.com/${key}/strains/search/`;
 
@@ -42,7 +45,8 @@ function StrainFinder(props) {
 
 	function handleSubmit(e){
 		e.preventDefault()
-		setSearch(`${baseUrl}${type}/${input}`);
+		setSearching(true)
+		setSearchUrl(`${baseUrl}${type}/${input}`);
 	}
 
 
@@ -52,7 +56,7 @@ function StrainFinder(props) {
 
 	return (
 		<div>
-			<form >
+			<form>
 				<select value={type} onChange={handleTypeChange}>
 					<option value='race'>Race</option>
 					<option value='effect'>Effect</option>
@@ -61,32 +65,54 @@ function StrainFinder(props) {
 					</option>
 					<option value='name'>Name</option>
 				</select>
-				<input type='text' placeholder='Enter a defining value' onChange={handleInputChange}/>
-				<input type='submit' onClick={handleSubmit}/>
+				<input
+					type='text'
+					placeholder='Enter a defining value'
+					onChange={handleInputChange}
+				/>
+				<input type='submit' onClick={handleSubmit} />
 			</form>
-			<Route path='/StrainFinder' exact>
-			<h2>Effect Types</h2>
-			<div>
-				<h3>Positive</h3>
-				{positive.map((effect) => (
-					<p>{effect}</p>
-				))}
-			</div>
-			<div>
-				<h3>Negative</h3>
-				{negative.map((effect) => (
-					<p>{effect}</p>
-				))}
-			</div>
-			<div>
-				<h3>Medical</h3>
-				{medical.map((effect) => (
-					<p>{effect}</p>
-				))}
-			</div>
-			<h2>Flavors</h2>
-			{flavors.map(flavor => <p>{flavor}</p>)}
-			</Route>
+			{!searching && (
+				<>
+					<h2>Effect Types</h2>
+					<div>
+						<h3>Positive</h3>
+						<>
+							{positive.map((effect) => (
+								<p>{effect}</p>
+							))}
+						</>
+					</div>
+					<div>
+						<h3>Negative</h3>
+						<>
+							{negative.map((effect) => (
+								<p>{effect}</p>
+							))}
+						</>
+					</div>
+					<div>
+						<h3>Medical</h3>
+						<>
+							{medical.map((effect) => (
+								<p>{effect}</p>
+							))}
+						</>
+					</div>
+					<h2>Flavors</h2>
+					<>
+						{flavors.map((flavor) => (
+							<p>{flavor}</p>
+						))}
+					</>
+				</>
+			)}
+			{searching && (
+				<StrainFinderResults
+					setSearching={setSearching}
+					searchUrl={searchUrl}
+				/>
+			)}
 		</div>
 	);
 }
