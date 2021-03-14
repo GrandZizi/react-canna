@@ -2,6 +2,14 @@
     font-family:'Sapphire Sativa';
     src:url(./Fonts/Sapphiresativa-0vJ9.ttf) format('truetype')
 }
+@font-face{
+    font-family:'Sweet Leaf';
+    src:url(./Fonts/Sweetleaf-7rBP.ttf) format('truetype')
+}
+@font-face{
+    font-family:'Alphasmoke';
+    src:url(./Fonts/Alphasmoke-OOX6.ttf) format('truetype')
+}
 
 
 
@@ -26,6 +34,8 @@
     background-color: #7BAA47;
     margin: 5px;
     text-align: center;
+    font-family: Alphasmoke;
+    font-size: 40px;
 }
 button{
     border-radius: 12px;
@@ -34,6 +44,7 @@ button{
     background-color:black;
     color: whitesmoke;
     border: 2px solid whitesmoke;
+    font-family: Sweet Leaf;
 }
 button:hover{
     background-color:#355a20;

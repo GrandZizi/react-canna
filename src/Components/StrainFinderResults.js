@@ -1,4 +1,5 @@
 import React,{useState} from 'react';
+import './styling/StrainFinderResults.css'
 
 
 function StrainFinderResults({setSearching, searchUrl}) {
@@ -11,10 +12,10 @@ function StrainFinderResults({setSearching, searchUrl}) {
     }
 
     return (
-			<div>
+			<div className='strain-container grid-strainfinder-results'>
 				<button onClick={toggle}>Back</button>
 				{searchData.map((searchItem) => (
-					<p>{searchItem.name}</p>
+					<p className='strainfinder-result'>{searchItem.name}</p>
 				))}
 			</div>
 		);

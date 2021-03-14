@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import StrainFinderResults from './StrainFinderResults';
+import './styling/StrainFinder.css';
 import {Route} from 'react-router-dom'
 import Strain from './Strain'
 
@@ -74,37 +75,41 @@ function StrainFinder(props) {
 			</form>
 			{!searching && (
 				<>
-					<h2>Effect Types</h2>
-					<div>
-						<h3>Positive</h3>
-						<>
-							{positive.map((effect) => (
-								<p>{effect}</p>
-							))}
-						</>
+					<h2 className='effect-type'>Effect Types</h2>
+					<div className='grid-effects'>
+						<div className='effect-container'>
+							<h3 className='effect-title'>Positive</h3>
+							<div className='grid-effect'>
+								{positive.map((effect) => (
+									<p className='effect'>{effect}</p>
+								))}
+							</div>
+						</div>
+						<div className='effect-container'>
+							<h3 className='effect-title'>Negative</h3>
+							<div className='grid-effect'>
+								{negative.map((effect) => (
+									<p className='effect'>{effect}</p>
+								))}
+							</div>
+						</div>
+						<div className='effect-container '>
+							<h3 className='effect-title'>Medical</h3>
+							<div className='grid-effect'>
+								{medical.map((effect) => (
+									<p className='effect'>{effect}</p>
+								))}
+							</div>
+						</div>
+						<div className='effect-container '>
+							<h2 className='effect-title'>Flavors</h2>
+							<div className='grid-effect'>
+								{flavors.map((flavor) => (
+									<p className='effect'>{flavor}</p>
+								))}
+							</div>
+						</div>
 					</div>
-					<div>
-						<h3>Negative</h3>
-						<>
-							{negative.map((effect) => (
-								<p>{effect}</p>
-							))}
-						</>
-					</div>
-					<div>
-						<h3>Medical</h3>
-						<>
-							{medical.map((effect) => (
-								<p>{effect}</p>
-							))}
-						</>
-					</div>
-					<h2>Flavors</h2>
-					<>
-						{flavors.map((flavor) => (
-							<p>{flavor}</p>
-						))}
-					</>
 				</>
 			)}
 			{searching && (

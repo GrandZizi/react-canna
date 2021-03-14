@@ -23,22 +23,30 @@ function Strain({match}) {
 
 	return (
 		<div className='allstrian-strain-container'>
-			<h1 className='strain-name'>{strain?.name}</h1>
-			<h2>{`Race: ${strain?.race}`}</h2>
-			<p>{`Description: ${strain?.desc}`}</p>
-			<h2>Effects</h2>
-			<h3>Positive:</h3>
-			{strainEffects.positive?.map((effect) => (
-				<p>{effect}</p>
-			))}
-			<h3>Medical:</h3>
-			{strainEffects.medical?.map((effect) => (
-				<p>{effect}</p>
-			))}
-			<h3>Negative:</h3>
-			{strainEffects.negative?.map((effect) => (
-				<p>{effect}</p>
-			))}
+			<h1 className='allstrain-strain-name'>{strain?.name}</h1>
+			<h2 className='strain-race'>{`Race : ${strain?.race}`}</h2>
+			<p className='strian-desc'>{`Description: ${strain?.desc}`}</p>
+			<h2 className='effects-title'>Effects</h2>
+			<div className='effects-container'>
+				<div className='positive-container'>
+					<h3 className='effect-title'>Positive :</h3>
+					{strainEffects.positive?.map((effect) => (
+						<p className='effect'>{effect}</p>
+					))}
+				</div>
+				<div className='medical-container'>
+					<h3 className='effect-title'>Medical :</h3>
+					{strainEffects.medical?.map((effect) => (
+						<p className='effect'>{effect}</p>
+					))}
+				</div>
+				<div className='negative-container'>
+					<h3 className='effect-title'>Negative :</h3>
+					{strainEffects.negative?.map((effect) => (
+						<p className='effect'>{effect}</p>
+					))}
+				</div>
+			</div>
 		</div>
 	);
 }

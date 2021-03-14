@@ -1,0 +1,24 @@
+html{
+    background-color: black;
+}
+
+.effect-container{
+    border-radius: 10px;
+    border: 4px solid #355A20;
+    background-color: #7BAA47;
+    margin: 5px;
+}
+.effect-type{
+    font-size: 40px;
+    font-family: Sapphire Sativa;
+    text-align: center;
+    color:whitesmoke
+}
+.grid-effects{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.grid-effect{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
