@@ -1,0 +1,24 @@
+.all-strains-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background-color: black;
+}
+.strain-container{
+    border-radius: 10px;
+    border: 4px solid #355A20;
+    background-color: #7BAA47;
+    margin: 5px;
+}
+.strain-link{
+    text-decoration: none ;
+    transition-duration: 0.4s;
+}
+.strain-link:link{
+    color:black
+}
+.strain-link:visited{
+    color: black
+}
+.strain-link:hover{
+    color:#355A20;
+}

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './styling/Recommended.css'
 
 function Recommended({ strainData }) {
 	const [selectedStrains, setSelectedStrains] = useState();
@@ -57,14 +58,17 @@ function Recommended({ strainData }) {
 	}, []);
 
 	return (
-		<div>
+		<div className='recommended-container'>
+			
+			<h2 className='recommended-title'>Recommended Strains</h2>
 			<button onClick={() => setSelectedStrains(randomStrains())}>
-				Re-roll
+				Roll Another One
 			</button>
-			<h2>Recommended Strains</h2>
-			{selectedStrains?.map((strain) => (
-				<h4>{strain}</h4>
-			))}
+			<div className='random-strains'>
+				{selectedStrains?.map((strain) => (
+					<h4 className='strain-name'>{strain}</h4>
+				))}
+			</div>
 		</div>
 	);
 }

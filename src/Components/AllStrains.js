@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import './styling/AllStrains.css'
 
 function AllStrains({strainData}) {
 
@@ -7,10 +8,10 @@ function AllStrains({strainData}) {
 
 
     return (
-			<div>
+			<div className='all-strains-container'>
 				{strainDataKeys.map((strain,index) => (
-					<h1 key={index}>
-						<Link to={`/AllStrains/${strain}`}>
+					<h1 key={index} className='strain-container'>
+						<Link to={`/AllStrains/${strain}`}className='strain-link'>
 							{strain}
 						</Link>
 					</h1>

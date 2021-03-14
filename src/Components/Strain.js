@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './styling/Strain.css'
 
 function Strain({match}) {
 	const [strain, setStrain] = useState();
@@ -21,8 +22,8 @@ function Strain({match}) {
 
 
 	return (
-		<div>
-			<h1>{strain?.name}</h1>
+		<div className='allstrian-strain-container'>
+			<h1 className='strain-name'>{strain?.name}</h1>
 			<h2>{`Race: ${strain?.race}`}</h2>
 			<p>{`Description: ${strain?.desc}`}</p>
 			<h2>Effects</h2>
