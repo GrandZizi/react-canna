@@ -1,0 +1,35 @@
+[
+    {
+        "name":"OG Kush",
+        "race": "Sativa",
+        "desc": "gets you blazed asf",
+        "effects": {
+            "postive": ["Relaxed","Uplifted","Euphoric"],
+            "negative": ["Dry Mouth","Dry Eyes"],
+            "Medical":["Depression","Stress","Headache"]
+        }
+
+    },
+    {
+        "name":"Girl Scout Cookies",
+        "race": "Indica",
+        "desc": "gets you relaxed asf",
+        "effects": {
+            "postive": ["Relaxed","Uplifted","Euphoric"],
+            "negative": ["Dry Mouth","Dry Eyes"],
+            "Medical":["Depression","Stress","Headache"]
+        }
+
+    },
+    {
+        "name":"Dog Shit",
+        "race": "Hybrid",
+        "desc": "gets you stoned asf",
+        "effects": {
+            "postive": ["Relaxed","Uplifted","Euphoric"],
+            "negative": ["Dry Mouth","Dry Eyes"],
+            "Medical":["Depression","Stress","Headache"]
+        }
+
+    }
+]

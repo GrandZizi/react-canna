@@ -1,14 +1,17 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import './styling/StrainFinderResults.css'
 
 
 function StrainFinderResults({setSearching, searchUrl}) {
     const [searchData, setSearchData] = useState([])
 
-    fetch(searchUrl).then(res => res.json()).then(resJson => setSearchData(resJson))
+	// useEffect(() => {
+		fetch(searchUrl).then(res => res.json()).then(resJson => setSearchData(resJson)).catch(err => console.log(err))
+	// }, [searchUrl])
+    
 
     function toggle() {
-        setSearching(false)
+        setSearching(false);
     }
 
     return (

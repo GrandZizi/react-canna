@@ -1,7 +1,0 @@
-
-//useEffect to make fetch call to grab all data
-
-//when user clicks on strain, display template component
-
-//pass routerProps to template component,
-// pull match.params.name, add to fetch call in template component

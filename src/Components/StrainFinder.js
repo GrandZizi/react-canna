@@ -33,7 +33,8 @@ function StrainFinder(props) {
 
 		fetch(`https://strainapi.evanbusse.com/${key}/searchdata/flavors`)
 			.then((res) => res.json())
-			.then((resJson) => setFlavors(resJson));
+			.then((resJson) => setFlavors(resJson))
+			.catch((err) => console.log(err));
 	}
 
 	function handleTypeChange(e) {
