@@ -5,7 +5,8 @@ StrainModel.deleteMany({})
     .then(() => {
         StrainModel.insertMany(seedData)
             .then(strain => {
-                console.log(strain);
+                console.log(strain)
+                process.exit()
             })
     })
     .catch(err => console.error)

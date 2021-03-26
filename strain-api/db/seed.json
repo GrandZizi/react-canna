@@ -15,7 +15,7 @@
         "race": "Indica",
         "desc": "gets you relaxed asf",
         "effects": {
-            "postive": ["Relaxed","Uplifted","Euphoric"],
+            "postive": ["Relaxed","Uplifted"],
             "negative": ["Dry Mouth","Dry Eyes"],
             "Medical":["Depression","Stress","Headache"]
         }
